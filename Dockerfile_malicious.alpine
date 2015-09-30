@@ -1,0 +1,9 @@
+FROM alpine:3.2
+
+RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN apk update; apk add sl@testing bash
+
+ADD demo_script_malicious.sh /usr/bin/script
+RUN chmod +x /usr/bin/script
+
+ENTRYPOINT [ "script" ]

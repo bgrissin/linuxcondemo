@@ -1,0 +1,5 @@
+FROM nginx
+
+COPY hacked-site /usr/share/nginx/html
+RUN chmod -R +g /usr/share/nginx/html/
+
