@@ -1,0 +1,6 @@
+FROM cirros:latest
+
+ADD demo_script.sh /usr/bin/script
+RUN chmod +x /usr/bin/script
+
+ENTRYPOINT [ "script" ]

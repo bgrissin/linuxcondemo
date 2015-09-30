@@ -21,8 +21,8 @@ RUN update-ca-certificates
 RUN echo "export DOCKER_CONTENT_TRUST_SERVER=https://notaryserver:4443" >> ~/.bashrc
 RUN echo "export DOCKER_CONTENT_TRUST_OFFLINE_PASSPHRASE=randompassphrase" >> ~/.bashrc
 
-RUN echo "docker images | grep demo | awk '{print \$3}' | xargs docker rmi -f 2&>/dev/null; clear" > /usr/bin/clean
-RUN echo "docker images | grep dolly | awk '{print \$3}' | xargs docker rmi -f 2&>/dev/null; clear" >> /usr/bin/clean
+#RUN echo "docker images | grep demo | awk '{print \$3}' | xargs docker rmi -f 2&>/dev/null; clear" > /usr/bin/clean
+#RUN echo "docker images | grep dolly | awk '{print \$3}' | xargs docker rmi -f 2&>/dev/null; clear" >> /usr/bin/clean
 RUN chmod +x /usr/bin/clean
 
 ENTRYPOINT ["bash"]
